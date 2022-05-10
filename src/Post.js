@@ -7,26 +7,26 @@ function Post({displayName, username, verified, text, image, avatar}) {
   return (
     <div className='Post'>
         <div className='post__avatar'>
-        <Avatar src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/284832/settings_images/rLlCifhXRJiT0RoN2FjK_Logo_roundbackground_black.png" />
+        <Avatar src={avatar} />
         </div>
         <div className='post__body'>
             <div className='post__header'>
                 <div className='post__headerText'>
                     <h3>
-                        Rafen Qazi {""}
+                        {displayName} {""}
                         <span className='post__headerSpecial'>
                         
-                            <VerifiedUser className='post__badge' />
-                            @rafenqazi
+                            {verified && <VerifiedUser className='post__badge' />}
+                            @{username}
                         
                         </span>
                     </h3>
                 </div>
                 <div className='post__headerDiscription'>
-                <p>I challange you to build a react clone twitter clone</p>
+                <p>{text}</p>
                 </div>
             </div>
-            <img src="https://media.giphy.com/media/AENSKyXiDYEzpZSKIr/giphy-downsized-large.gif" alt=""></img>
+            <img src={image} alt=""></img>
             <div className='post__footer'>
                 <ChatBubbleOutline fontSize='small'/>
                 <Repeat fontSize='small' />
